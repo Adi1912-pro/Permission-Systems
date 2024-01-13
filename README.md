@@ -1,6 +1,6 @@
-# first_app
+# nitc_venue_permission_app
 
-A new Flutter project.
+Flutter App for booking and managing event venues of NITC
 
 ## Getting Started
 
