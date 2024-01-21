@@ -1,0 +1,7 @@
+There are a lot of requirements for implementing this project.
+But the most important thing is to have the determination to complete it.
+So , Here I will be listing the number of hours I spent on this project for each commit.
+I will be updating this list as I progress through the project.
+
+1. splash added + Login screen completed - 1 hours
+2. Selection screen completed - 0.5 hours

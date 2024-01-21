@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  final String title;
+  const LoginScreen({super.key, required this.title});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -32,7 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Login Screen',
+                '${widget.title}\nLogin',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 30,
                     color: Theme.of(context).primaryColor,

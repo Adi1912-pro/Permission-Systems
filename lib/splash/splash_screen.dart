@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nitc_venue_permission_app/auth/login_screen.dart';
-import 'package:nitc_venue_permission_app/home/home_screen.dart';
+import 'package:nitc_venue_permission_app/splash/selection_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // after 3 seconds, navigate to the home page
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const LoginScreen()));
+          MaterialPageRoute(builder: (context) => const SelectionScreen()));
     });
     super.initState();
   }
