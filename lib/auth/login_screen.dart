@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nitc_venue_permission_app/models/base_user.dart';
 
 class LoginScreen extends StatefulWidget {
-  final String title;
-  const LoginScreen({super.key, required this.title});
+  final UserType userType;
+  const LoginScreen({super.key, required this.userType});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -16,6 +17,13 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_loginFormKey.currentState!.validate()) {
       print(_emailController.text);
       print(_passwordController.text);
+    }
+    if (widget.userType == UserType.clubAdmin) {
+      print("Club Admin");
+    } else if (widget.userType == UserType.venueAdmin) {
+      print("Venue Admin");
+    } else if (widget.userType == UserType.facultyIncharge) {
+      print("Faculty Incharge");
     }
   }
 
@@ -33,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '${widget.title}\nLogin',
+                '${getUserTypeFromString(widget.userType)}\nLogin',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 30,

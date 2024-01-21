@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:nitc_venue_permission_app/auth/login_screen.dart';
+import 'package:nitc_venue_permission_app/models/base_user.dart';
 import 'package:nitc_venue_permission_app/widgets/selection_button.dart';
 
 class SelectionScreen extends StatelessWidget {
   const SelectionScreen({super.key});
 
-  void goToLoginScreen(BuildContext context, String userType) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => LoginScreen(title: userType)));
+  void goToLoginScreen(BuildContext context, UserType userType) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => LoginScreen(userType: userType)));
   }
 
   @override
@@ -31,7 +34,8 @@ class SelectionScreen extends StatelessWidget {
                 text: 'Club Admin',
                 width: 300,
                 icon: const Icon(Icons.account_circle_outlined),
-                onPressed: () => {goToLoginScreen(context, 'Club Admin')}),
+                onPressed: () =>
+                    {goToLoginScreen(context, UserType.clubAdmin)}),
             const SizedBox(
               height: 30,
             ),
@@ -39,7 +43,8 @@ class SelectionScreen extends StatelessWidget {
                 text: 'Venue Admin',
                 width: 300,
                 icon: const Icon(Icons.account_circle_outlined),
-                onPressed: () => {goToLoginScreen(context, 'Venue Admin')}),
+                onPressed: () =>
+                    {goToLoginScreen(context, UserType.venueAdmin)}),
             const SizedBox(
               height: 30,
             ),
@@ -48,7 +53,7 @@ class SelectionScreen extends StatelessWidget {
                 width: 300,
                 icon: const Icon(Icons.account_circle_outlined),
                 onPressed: () =>
-                    {goToLoginScreen(context, 'Faculty Incharge')}),
+                    {goToLoginScreen(context, UserType.facultyIncharge)}),
           ],
         ),
       ),
